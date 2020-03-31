@@ -47,6 +47,7 @@ class Game extends React.Component {
       }],
       stepNumber: 0,
       xIsNext: true,
+      reverseOrder: false,
     };
   }
   handleClick(i) {
@@ -97,6 +98,12 @@ class Game extends React.Component {
       );
     });
 
+    if (this.state.reverseOrder) {
+      moves.sort(function(a,b) {
+         return b.key - a.key;
+       });
+    } 
+
     let status;
     if(winner) {
       status = 'Winner: ' + winner;
@@ -113,6 +120,9 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
           <div>{status}</div>
+          <button className="status" onClick={()=> this.setState({reverseOrder: !this.state.reverseOrder,})}>
+            {'Reverse the order'}
+          </button>
           <ol>{moves}</ol>
         </div>
       </div>
