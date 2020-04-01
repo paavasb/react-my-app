@@ -1,5 +1,8 @@
-This project was created by following the [official React tutorial](https://reactjs.org/tutorial/tutorial.html).
+*This project was created by following the [official React tutorial](https://reactjs.org/tutorial/tutorial.html).*
+======
 Additionally, it also has each of the 6 additional ideas for improvement suggested at the end of the tutorial - 
+======
+####
 1. Display the location for each move in the format (col, row) in the move history list.
 2. Bold the currently selected item in the move list.
 3. Rewrite Board to use two loops to make the squares instead of hardcoding them.
