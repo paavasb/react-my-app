@@ -1,3 +1,16 @@
+This project was created by following the [official React tutorial](https://reactjs.org/tutorial/tutorial.html).
+Additionally, it also has each of the 6 additional ideas for improvement suggested at the end of the tutorial - 
+1. Display the location for each move in the format (col, row) in the move history list.
+2. Bold the currently selected item in the move list.
+3. Rewrite Board to use two loops to make the squares instead of hardcoding them.
+4. Add a toggle button that lets you sort the moves in either ascending or descending order.
+5. When someone wins, highlight the three squares that caused the win.
+6. When no one wins, display a message about the result being a draw.
+
+Feel free to go through the different commits to see the relevant modifications made for each step!
+
+###
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
