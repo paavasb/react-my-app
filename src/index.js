@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+const player1 = 'X';
+const player2 = 'O';
+
 function Square(props) {
   const winningSquareStyle = {
     backgroundColor: '#add8e6'
@@ -65,7 +68,7 @@ class Game extends React.Component {
     if(winner || squares[i]) {
       return; 
     }
-    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    squares[i] = this.state.xIsNext ? player1 : player2;
     this.setState({
       history: history.concat([{
         squares: squares,
@@ -89,7 +92,7 @@ class Game extends React.Component {
 
     const moves = history.map((step, move) => {
       const movePosition = '(' + step.col + ', ' + step.row + ')';
-      const moveBy = move % 2 === 0 ? 'O' : 'X';
+      const moveBy = move % 2 === 0 ? player2 : player1;
       const desc = move ? 
       'Go to move #' + move + ' by ' + moveBy + ' to '+ movePosition : 
       'Go to game start';
@@ -123,7 +126,7 @@ class Game extends React.Component {
     } else if(this.state.stepNumber === 9){
       status = "Draw: No one won";
     } else {
-      status = 'Next Player: ' + (this.state.xIsNext ? 'X' : 'O');
+      status = 'Next Player: ' + (this.state.xIsNext ? player1 : player2);
     }
     return (
       <div className="game">
@@ -178,3 +181,4 @@ function calculateColRow(i) {
   const row = Math.floor(i/3);
   return [col, row];
 }
+
